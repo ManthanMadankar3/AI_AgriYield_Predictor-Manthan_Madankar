@@ -123,6 +123,28 @@ sidebar_glass_style = """
 }
 </style>
 """
+dark_expander_css = """
+<style>
+/* Darker background for Advanced Inputs expander */
+.streamlit-expanderHeader {
+    background-color: rgba(20, 20, 20, 0.85) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Inside content darker too */
+.streamlit-expanderContent {
+    background-color: rgba(15, 15, 15, 0.7) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+}
+</style>
+"""
+st.markdown(dark_expander_css, unsafe_allow_html=True)
+
 st.markdown(sidebar_glass_style, unsafe_allow_html=True)
 
 st.sidebar.title("🌿 Navigation")
