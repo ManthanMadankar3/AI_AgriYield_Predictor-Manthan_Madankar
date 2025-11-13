@@ -29,7 +29,7 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-bg_image_path = "photo-1623190632241-20a391a7b2e0.jpg"
+bg_image_path = "Projects/photo-1623190632241-20a391a7b2e0.jpg"
 base64_image = get_base64_of_bin_file(bg_image_path) if os.path.exists(bg_image_path) else ""
 
 page_css = f"""
