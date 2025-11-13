@@ -149,7 +149,10 @@ if page == "🔍 Yield Prediction":
         production = st.number_input("🏭 Production (tons)", value=0.0, min_value=0.0, step=0.01)
         rainfall = st.number_input("🌧️ Annual Rainfall (mm)", value=0.0, min_value=0.0, step=0.1)
 
-    with st.expander("⚙️ Advanced Inputs"):
+    st.markdown("### 🌟 Configure Advanced Settings Below")
+    st.markdown("<p style='color:#d0ffd0;'>You can fine-tune crop and environmental factors for more accurate yield predictions.</p>", unsafe_allow_html=True)
+    
+    with st.expander("⚙️ Advanced Inputs (click to expand) ", expanded=False):
         a1, a2, a3 = st.columns(3)
         with a1:
             fertilizer = st.number_input("🧴 Fertilizer (kg)", value=0.0, min_value=0.0, step=1.0)
