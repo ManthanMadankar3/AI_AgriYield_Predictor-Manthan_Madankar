@@ -123,6 +123,37 @@ sidebar_glass_style = """
 }
 </style>
 """
+dark_expander_css = """
+<style>
+/* 🔒 Always-dark header strip for expander (collapsed + expanded) */
+div[data-testid="stExpander"] > div:first-child {
+    background-color: rgba(5, 5, 5, 0.95) !important; /* deep black tone */
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    padding: 12px 18px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover glow for better visibility */
+div[data-testid="stExpander"] > div:first-child:hover {
+    background-color: rgba(0, 0, 0, 1) !important;
+    transform: scale(1.01);
+}
+
+/* Content inside expander — slightly lighter but still dark */
+div[data-testid="stExpander"] div[role="region"] {
+    background-color: rgba(15, 15, 15, 0.85) !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 18px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+</style>
+"""
+st.markdown(dark_expander_css, unsafe_allow_html=True)
+
 st.markdown(sidebar_glass_style, unsafe_allow_html=True)
 
 st.sidebar.title("🌿 Navigation")
