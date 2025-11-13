@@ -123,36 +123,6 @@ sidebar_glass_style = """
 }
 </style>
 """
-solid_dark_expander_css = """
-<style>
-/* Fully solid black header strip */
-div[data-testid="stExpander"] > div:first-child {
-    background-color: #000000 !important;  /* pure black */
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    border-radius: 10px !important;
-    padding: 12px 18px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 12px rgba(0,0,0,0.8);
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-/* Slight hover brighten */
-div[data-testid="stExpander"] > div:first-child:hover {
-    background-color: #111111 !important;
-    transform: scale(1.01);
-}
-
-/* Inside expanded content */
-div[data-testid="stExpander"] div[role="region"] {
-    background-color: #0d0d0d !important;  /* solid dark grey for inside */
-    border-radius: 0 0 10px 10px !important;
-    padding: 18px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-</style>
-"""
-st.markdown(solid_dark_expander_css, unsafe_allow_html=True)
 st.markdown(sidebar_glass_style, unsafe_allow_html=True)
 
 st.sidebar.title("🌿 Navigation")
