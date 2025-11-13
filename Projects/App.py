@@ -125,24 +125,33 @@ sidebar_glass_style = """
 """
 dark_expander_css = """
 <style>
-/* Darker background for Advanced Inputs expander */
-.streamlit-expanderHeader {
-    background-color: rgba(20, 20, 20, 0.85) !important;
-    color: #fff !important;
+/* Dark header for expander (both collapsed & expanded) */
+div[data-testid="stExpander"] > div:first-child {
+    background-color: rgba(15, 15, 15, 0.85) !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
     border-radius: 10px !important;
-    padding: 10px !important;
+    padding: 10px 15px !important;
+    border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Inside content darker too */
-.streamlit-expanderContent {
-    background-color: rgba(15, 15, 15, 0.7) !important;
+/* Slight hover effect */
+div[data-testid="stExpander"] > div:first-child:hover {
+    background-color: rgba(25, 25, 25, 0.95) !important;
+}
+
+/* Inside content area */
+div[data-testid="stExpander"] div[role="region"] {
+    background-color: rgba(10, 10, 10, 0.75) !important;
     border-radius: 10px !important;
     padding: 15px !important;
 }
 </style>
 """
+st.markdown(dark_expander_css, unsafe_allow_html=True)
+
 st.markdown(dark_expander_css, unsafe_allow_html=True)
 
 st.markdown(sidebar_glass_style, unsafe_allow_html=True)
