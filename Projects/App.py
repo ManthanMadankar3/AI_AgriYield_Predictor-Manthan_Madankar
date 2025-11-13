@@ -123,11 +123,6 @@ sidebar_glass_style = """
 }
 </style>
 """
-
-st.markdown(dark_expander_css, unsafe_allow_html=True)
-
-st.markdown(dark_expander_css, unsafe_allow_html=True)
-
 st.markdown(sidebar_glass_style, unsafe_allow_html=True)
 
 st.sidebar.title("🌿 Navigation")
